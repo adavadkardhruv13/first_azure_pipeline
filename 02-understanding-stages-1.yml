@@ -13,21 +13,26 @@ stages:
  - stage: build
    jobs:
    - job: FirstJob
-  - steps: echo build Firstjob!
+   steps:
+    - bash: echo build Firstjob!
    - job: SecondJob
-   - steps: echo build Secondjob!
+   steps:
+   - bash: echo build Secondjob!
  - stage: devdeploy
    jobs:
     - job: devdeployjob
-    - steps: echo devdeploy job   
+    steps:
+    - bash: echo devdeploy job   
  - stage: QAdeploy
    jobs:
     - job: QAdeployjob
-    - steps: echo QAdeploy job   
+    steps:
+    - bash: echo QAdeploy job   
  - stage: proddeploy
    jobs:
     - job: proddeployjob
-    - steps: echo proddeploy job 
+    steps:
+     - bash: echo proddeploy job 
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
