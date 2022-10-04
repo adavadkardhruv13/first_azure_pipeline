@@ -7,33 +7,34 @@ trigger:
 - main
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 stages:
  - stage: build
    jobs:
     - job: FirstJob
-    step:
-    -bash: echo build FirstJob!
+      steps:
+      - bash: echo build FirstJob!
     - job: SecondJob
-    step: 
-    -bash: echo build Secondjob!
- - stage: devdeploy
+      steps: 
+      - bash: echo build Secondjob!
+ - stage: DevDeploy
    jobs:
-    - job: devdeployjob
-    step:
-    -bash: echo DevDeploy job   
- - stage: QAdeploy
+    - job: DevDeployJob
+      steps:
+      - bash: echo DevDeploy job   
+ - stage: QADeploy
    jobs:
-    - job: QAdeployjob
-    step:
-    -bash: echo QAdeploy job   
+    - job: QADeployjob
+      steps:
+      - bash: echo QAdeploy job   
  - stage: proddeploy
    jobs:
     - job: proddeployjob
-     step: 
-    -bash: echo proddeploy job 
+      steps: 
+      - bash: echo proddeploy job 
 
+steps:
 - script: |
     echo Add other tasks to build, test, and deploy your project.
     echo See https://aka.ms/yaml
