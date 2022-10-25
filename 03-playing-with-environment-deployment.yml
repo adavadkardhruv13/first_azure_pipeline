@@ -43,6 +43,4 @@ stages:
           steps:
           - script: echo "deploy to QA"
 
-steps:
-- script: echo running on $(operatingsystem)
-  displayName: 'Run a one-line script'
+
